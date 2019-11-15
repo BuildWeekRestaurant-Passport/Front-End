@@ -1,27 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import api from '../../utils/api';
 import { connect } from "react-redux";
+import { fetchPlaces } from '../../actions/restaurants'
 
 import axios from 'axios'
 
 function List(props) {
 
-    // useEffect(() => {
-    //     axios.get('https://build-restaurant-passport.herokuapp.com/cities')
-    //         .then(res => {
-    //             console.log(res)
-    //         })
-    //         .catch(err => {
-    //             throw (err)
-    //         })
-    // }, [])
-    console.log(props.places)
+    // Calling the api to have access to the array of places
+    useEffect(() => {
+        props.fetchPlaces()
+    }, [])
 
+    // This is your restaurant array
+    console.log(props.places)
     return (
         <div>
+            {props.places.length === 1 && <h1>Loading...</h1>}
             {props.places.map(place => (
                 <>
-                    <h1>{place.name}</h1>
-                    <h2>{place.city}</h2>
+                    <h2>{place.restName}</h2>
                 </>
             ))}
         </div>
@@ -34,4 +32,10 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(List)
+const mapDispatchToProps = {
+    fetchPlaces
+}
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(List)

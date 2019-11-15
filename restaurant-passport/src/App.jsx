@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, Route } from "react-router-dom";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
 import { getToken } from './utils/api'
 import List from './components/List/List'
 
+
+
 import "./App.css";
 
-function App() {
+function App(props) {
   const signedIn = getToken()
+
+
 
   return (
     <div className="App">
@@ -26,5 +30,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
