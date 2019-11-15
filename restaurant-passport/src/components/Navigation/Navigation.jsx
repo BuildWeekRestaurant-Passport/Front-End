@@ -19,7 +19,7 @@ export default function NavTabs() {
                 </Button>
                 <Button as={NavLink} to="/stamped" activeClassName="activeNavButton">
                     Stamped {/* All stamped locations. Specifies favorite locations and
-                                top 3 memorable moments from all trips. */} 
+                                top 3 memorable moments from all trips, or something. */} 
                 </Button>
                 <Button as={NavLink} to="/user-profile" activeClassName="activeNavButton">
                     Profile  {/* Account page - user selects cuisine preferences,
