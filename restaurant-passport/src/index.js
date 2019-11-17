@@ -9,6 +9,7 @@ import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import { reducer } from "./reducers/restaurants";
 import { create } from "domain";
+// import RestCard from './RestCard'
 
 const store = createStore(reducer, applyMiddleware(thunk, logger));
 
