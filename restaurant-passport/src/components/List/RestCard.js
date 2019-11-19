@@ -10,7 +10,7 @@ import styled from "styled-components";
      flex-direction: column;
      justify-content: center;
      align-items: center;
-     background-color:: #406098;
+     background-color:: #f0e5e5;
      margin: 5% 20%
      border: solid 4px black;
      border-radius: 8px;
