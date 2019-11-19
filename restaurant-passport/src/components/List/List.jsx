@@ -7,9 +7,22 @@ import Description from '../Description/Description'
 
 import axios from 'axios'
 
-function List({ data }) {
-    console.log(data)
+function List(props) {
+    const [data, setData] = useState([])
 
+    useEffect(() => {
+        api()
+            .get(
+                "https://build-restaurant-passport.herokuapp.com/cities/2/restaurants"
+            )
+            .then(res => {
+                console.log(res.data.restaurants)
+                setData(res.data.restaurants)
+            })
+            .catch(err => {
+                throw (err)
+            })
+    }, [])
 
 
 
@@ -19,12 +32,12 @@ function List({ data }) {
         <div>
             {data.length === 0 && <h1>Loading...</h1>}
             {data.map((place, index) => (
-                <>
+                <div key={index}>
                     <Link to={`/places/${place.restID}`}>
                         <h2>{place.restName}</h2>
                     </Link>
 
-                </>
+                </div>
             ))}
 
 

@@ -14,22 +14,7 @@ import "./App.css";
 function App(props) {
   const signedIn = getToken()
 
-  const [data, setData] = useState([])
 
-  // Calling the api to have access to the array of places
-  useEffect(() => {
-    api()
-      .get(
-        "https://build-restaurant-passport.herokuapp.com/cities/2/restaurants"
-      )
-      .then(res => {
-        console.log(res.data.restaurants)
-        setData(res.data.restaurants)
-      })
-      .catch(err => {
-        throw (err)
-      })
-  }, [])
 
 
 
@@ -45,7 +30,7 @@ function App(props) {
       <Route exact path="/" component={Login} />
       <Route exact path="/signup" component={Signup} />
       <Route exact path='/places' render={props => {
-        return <List {...props} data={data} />
+        return <List {...props} />
       }} />
       <Route exact path='/places/:id' render={props => {
         return <Description {...props} />
