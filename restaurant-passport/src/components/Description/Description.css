@@ -1,0 +1,22 @@
+.stamp__toggle {
+  background: papayawhip;
+  height: 60px;
+  width: 100px;
+}
+
+.toggle {
+  background: #35e71e;
+  height: 60px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  width: 100px;
+}
+
+.toggled {
+  background: #1b6d11;
+}
+
+.stamp {
+  color: #fff;
+}
+/*# sourceMappingURL=Description.css.map */

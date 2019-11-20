@@ -17,12 +17,18 @@ import "./App.css";
 
 function App(props) {
   const signedIn = getToken()
+  const [savedPlace, setSavedPlace] = useState([
+    {
+      name: ''
+    }
+  ])
+  console.log(savedPlace)
   // const [place, setPlace] = useState({
-  //   name: 'Sichuan Folk',
-  //   address: '1201 E Parker Rd',
+  //   name: `Zoli's NY Pizza`,
+  //   address: '14910 Midway Rd',
   //   city: 'Dallas',
   //   city_id: 2,
-  //   description: 'chinese'
+  //   description: 'pizza'
   // })
 
   // useEffect(() => {
@@ -59,13 +65,15 @@ function App(props) {
 
       <ProtectedRoute exact path='/places' component={List} />
       <Route exact path="/places/:id" render={props => {
-        return <Description {...props} />
+        return <Description {...props} setSavedPlace={setSavedPlace} savedPlace={savedPlace} />
       }} />
       <ProtectedRoute exact path="/logout" component={Logout} />
     </div>
   );
 }
 
+export default App
 
 
-export default App;
+
+
