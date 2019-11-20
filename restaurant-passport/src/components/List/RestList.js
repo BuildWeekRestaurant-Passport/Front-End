@@ -9,7 +9,7 @@ export default function RestList() {
 const [restaurant, setRestaurant] = useState([]);
 
 axios
-    //  .get('https://rickandmortyapi.com/api/character/')
+     "https://build-restaurant-passport.herokuapp.com/cities/2/restaurants"
      .then((response) => {
        setRestaurant(response.data.results);
  console.log(response);

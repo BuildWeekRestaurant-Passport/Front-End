@@ -8,29 +8,29 @@ export default function NavTabs() {
     return (
         <div className="navbar grid-view">
             <Button.Group widths="4" className="navbar">
-                <Button as={NavLink} exact to="/" activeClassName="activeNavButton">
-                    Home {/* Welcome back! page - shows recent experiences. Tracks 
+                <Button as={NavLink} exact to="/user-profile" activeClassName="activeNavButton">
+                    Profile {/* Welcome back! page - shows recent experiences. Tracks 
                              progress of percentage of destinations visited vs total.
                              Suggests random location from list for next outing. */}
                 </Button>
-                <Button as={NavLink} to="/list" activeClassName="activeNavButton">
-                    Destinations {/* Michael's reastaurant list of all restaurants
+                <Button as={NavLink} to="/places" activeClassName="activeNavButton">
+                    View Restaurants {/* Michael's reastaurant list of all restaurants
                                      with visited places stamped. */}
                 </Button>
                 <Button as={NavLink} to="/stamped" activeClassName="activeNavButton">
-                    Stamped {/* All stamped locations. Specifies favorite locations and
-                                top 3 memorable moments from all trips, or something. */} 
+                    Stamped Collection {/* All stamped locations. Will store favorite locations and
+                                top 3 memorable moments from all trips, or something. */}
                 </Button>
-                <Button as={NavLink} to="/user-profile" activeClassName="activeNavButton">
-                    Profile  {/* Account page - user selects cuisine preferences,
+                <Button as={NavLink} to="/account" activeClassName="activeNavButton">
+                    Preferences {/* Account page - user selects cuisine preferences,
                                 environment types (outdoor, rooftop, live music, etc)*/}
                 </Button>
-            </Button.Group>      
+            </Button.Group>
 
-            <Route exact path="/" component={}/>
-            <Route path="/list" component={} />
-            <Route path="/stamped" component={} />
-            <Route path="/user-profile" component={} />      
+            <Route exact path="/account" />
+            <Route exact path="/places" />
+            <Route path="/stamped" />
+            <Route path="/user-profile" />
         </div>
     )
 }

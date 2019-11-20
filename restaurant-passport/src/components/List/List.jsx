@@ -1,41 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../utils/api';
+import { Link, Route } from 'react-router-dom'
 import { connect } from "react-redux";
 import { fetchPlaces } from '../../actions/restaurants'
+import Description from '../Description/Description'
 
 import axios from 'axios'
 
-function List(props) {
+function List({ data }) {
+    console.log(data)
 
-    // Calling the api to have access to the array of places
-    useEffect(() => {
-        props.fetchPlaces()
-    }, [])
+
+
+
 
     // This is your restaurant array
-    console.log(props.places)
     return (
         <div>
-            {props.places.length === 1 && <h1>Loading...</h1>}
-            {props.places.map(place => (
+            {data.length === 0 && <h1>Loading...</h1>}
+            {data.map((place, index) => (
                 <>
-                    <h2>{place.restName}</h2>
+                    <Link to={`/places/${place.restID}`}>
+                        <h2>{place.restName}</h2>
+                    </Link>
+
                 </>
             ))}
+
+
         </div>
     )
 }
 
-function mapStateToProps(state) {
-    return {
-        places: state.places
-    }
-}
-
-const mapDispatchToProps = {
-    fetchPlaces
-}
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(List)
+
+export default List;
