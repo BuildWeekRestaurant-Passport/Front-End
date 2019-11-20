@@ -27,7 +27,7 @@ export default function NavTabs() {
                 </Button>
             </Button.Group>
 
-            <Route exact path="/account" />
+            <Route exact path="/account" /> {/* TODO: Add components to routes. */}
             <Route exact path="/places" />
             <Route path="/stamped" />
             <Route path="/user-profile" />
