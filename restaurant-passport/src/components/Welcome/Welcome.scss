@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap");
+
+.welcome {
+  height: 100vh;
+  background-image: linear-gradient(
+      rgba(20, 20, 20, 0.7),
+      rgba(20, 20, 20, 0.7)
+    ),
+    url("../../img/welcome2.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+
+  h1 {
+    color: white;
+    font-size: 4rem;
+    color: white;
+    font-family: "Libre Baskerville", serif;
+    margin-top: 250px;
+  }
+
+  h3 {
+    color: white;
+    font-size: 2.5rem;
+    font-family: "Libre Baskerville", serif;
+  }
+}
