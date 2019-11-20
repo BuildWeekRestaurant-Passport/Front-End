@@ -20,7 +20,7 @@ function Signup(props) {
         event.preventDefault()
 
         api()
-            .post('/users/register', data)
+            .post('users/register', data)
             .then(result => {
                 props.history.push('/login')
             })
