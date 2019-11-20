@@ -13,7 +13,7 @@ function List(props) {
     useEffect(() => {
         api()
             .get(
-                "https://build-restaurant-passport.herokuapp.com/cities/2/restaurants"
+                "/cities/2/restaurants"
             )
             .then(res => {
                 console.log(res.data.restaurants)

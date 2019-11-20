@@ -17,7 +17,7 @@ function Description(props) {
             })
     }, [])
 
-    console.log(place)
+
     if (!place) {
         return <div>Loading restaurant information...</div>
     }
