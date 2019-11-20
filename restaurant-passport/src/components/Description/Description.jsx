@@ -9,7 +9,7 @@ function Description(props) {
 
         api().get(`/cities/restaurants/${id}`)
             .then(res => {
-                console.log(res)
+                console.log(res.data)
                 setPlace(res.data)
             })
             .catch(err => {
@@ -17,14 +17,13 @@ function Description(props) {
             })
     }, [])
 
-    console.log(place)
     if (!place) {
         return <div>Loading restaurant information...</div>
     }
 
     return (
         <div>
-            <h1>{place.restName}</h1>
+            <h1>{place.name}</h1>
             <h2>{place.address}</h2>
             <p>{place.description}</p>
         </div>
