@@ -3,13 +3,14 @@ import {Link} from "react-router-dom";
 import RestCard from '../src/components/List/RestCard';
 import Header from '../src/components/List/Header';
 import axios from "axios";
+import api from '../../utils/api';
 
 export default function RestList() {
 
 const [restaurant, setRestaurant] = useState([]);
 
 axios
-     "https://build-restaurant-passport.herokuapp.com/cities/2/restaurants"
+     .get("https://build-restaurant-passport1.herokuapp.com/cities/2/restaurants")
      .then((response) => {
        setRestaurant(response.data.results);
  console.log(response);
