@@ -1,4 +1,5 @@
-
+@import "./components/Welcome/Welcome.css";
+@import "./components//Description/Description.css";
 
 body {
   /* background-color: #87CEFA; */

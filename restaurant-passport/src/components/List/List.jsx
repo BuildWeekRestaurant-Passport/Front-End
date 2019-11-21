@@ -24,9 +24,6 @@ function List(props) {
             })
     }, [])
 
-
-
-
     // This is your restaurant array
     return (
         <div>

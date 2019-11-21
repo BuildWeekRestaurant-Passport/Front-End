@@ -2,24 +2,33 @@ import React, { useState, useEffect } from "react";
 import { Link, Route } from "react-router-dom";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
+import Logout from './components/Logout/Logut';
 import { getToken } from "./utils/api"
 import List from "./components/List/List"
 import Description from "./components/Description/Description"
 import api from "./utils/api"
 import NavTabs from "./components/Navigation/Navigation"
-import Header from "./components/List/Header"
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+import Welcome from './components/Welcome/Welcome'
+
 
 
 import "./App.css";
 
 function App(props) {
   const signedIn = getToken()
+  const [savedPlace, setSavedPlace] = useState([
+    {
+      name: ''
+    }
+  ])
+  console.log(savedPlace)
   // const [place, setPlace] = useState({
   //   name: `Zoli's NY Pizza`,
-  //   city: 'Dallas',
   //   address: '14910 Midway Rd',
-  //   description: 'Now nicely settled in to its new Addison home, Zoli’s is so much more than one of Dallas’s best destinations for cheesy, New York-style pizza. The round and square pies here are still stellar, but look deeper on the menu for one of the city’s best bowls of carbonara and a mighty fine burger.',
-  //   city_id: 2
+  //   city: 'Dallas',
+  //   city_id: 2,
+  //   description: 'pizza'
   // })
 
   // useEffect(() => {
@@ -32,23 +41,28 @@ function App(props) {
   //     })
   // }, [])
 
+
   return (
     <div className="App">
       <nav>
         {signedIn && <NavTabs />}
 
-        <Link to="/signup">Sign Up</Link>
-        <Link to="/login">Login</Link>
+        {!signedIn && <Link to="/signup">Sign Up</Link>}
+        {!signedIn && <Link to="/login">Login</Link>}
+        {signedIn && <Link to="/logout">Logout</Link>}
       </nav>
 
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/signup" component={Signup} />
-      <Route exact path="/places" render={props => {
-        return <List {...props} />
-      }} />
+
+      {/* <Welcome /> */}
+      {/* <Route exact path='/' component={Welcome} /> */}
+      <Route path="/login" component={Login} />
+      <Route path="/signup" component={Signup} />
+
+      <ProtectedRoute exact path='/places' component={List} />
       <Route exact path="/places/:id" render={props => {
-        return <Description {...props} />
+        return <Description {...props} setSavedPlace={setSavedPlace} savedPlace={savedPlace} />
       }} />
+      <ProtectedRoute exact path="/logout" component={Logout} />
     </div>
   );
 }
