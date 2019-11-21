@@ -7,6 +7,7 @@ import List from "./components/List/List"
 import Description from "./components/Description/Description"
 import api from "./utils/api"
 import NavTabs from "./components/Navigation/Navigation"
+import Header from "./components/List/Header"
 
 
 import "./App.css";
@@ -30,11 +31,6 @@ function App(props) {
   //       throw (err)
   //     })
   // }, [])
-
-
-
-
-
 
   return (
     <div className="App">

@@ -26,17 +26,18 @@ function Description(props) {
      align-items: center;
      background-color: #f0e5e5;
      margin: 5% 20%
-     border: solid 4px black;
-     border-radius: 8px;
-     font-weight: 600;
-     font-size: 18px;
-     box-shadow: 7px 7px 5px; #2F4F4F;
-      -moz-box-shadow: 7px 7px 5px #2F4F4F;
-      -webkit-box-shadow: 7px 7px 5px #2F4F4F;
-      -khtml-box-shadow: 7px 7px 7px #2F4F4F;`
+     outline: 18px ridge rgba(14,98,109,0.82);
+     outline-offset: 20px;
+     border-radius: 5px;
+     font-weight: 700;
+     font-size: 28px;
+     box-shadow: 15px 15px 7px; #2F4F4F;
+      -moz-box-shadow: 15px 15px 7px #2F4F4F;
+      -webkit-box-shadow: 15px 15px 7px #2F4F4F;
+      -khtml-box-shadow: 15px 15px 7px #2F4F4F;`
 
      const Header = styled.h2`
-     font-size: 35px;
+     font-size: 44px;
      text-shadow: 2px 2px BlueViolet;`
 
 
