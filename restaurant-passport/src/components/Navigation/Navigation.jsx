@@ -2,6 +2,7 @@ import React from "react";
 // import { Button } from "semantic-ui-react";
 import { Link, NavLink, Route } from "react-router-dom";
 import styled from "styled-components";
+import App from "../../App"
 
 //TODO: Import Components that will appear in Nav here.
 
@@ -63,11 +64,12 @@ export default function NavTabs() {
                         Preferences {/* Account page - user selects cuisine preferences,
                                     environment types (outdoor, rooftop, live music, etc)*/}
                     {/* </NavLink> */}
+                    <NavLink to="/logout" className="navMenu">Logout</NavLink>
 
-                    <Route exact path="/account" /> {/* TODO: Add components to routes. */}
+                    <Route exact path="/user-profile" />  {/* TODO: Add components to routes. */}
                     <Route exact path="/places" />
                     <Route path="/stamped" />
-                    <Route path="/user-profile" />  
+                     
                 </NavMenu>              
             </NavBar>
         </NavContent>
