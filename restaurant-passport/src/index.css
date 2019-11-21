@@ -1,8 +1,10 @@
 @import "./components/Welcome/Welcome.css";
 @import "./components//Description/Description.css";
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap");
+
 
 body {
-  /* background-color: #87CEFA; */
+  
   background: #C0CEC6;
   background: -moz-linear-gradient(45deg, #C0CEC6 0%, #239BA4 51%, #9EC5B7 100%);
   background: -webkit-linear-gradient(45deg, #C0CEC6 0%, #239BA4 51%, #9EC5B7 100%);
@@ -40,3 +42,9 @@ header h1 {
 .grid-view div.card.ui {
   margin: 1.25rem;
 }
+
+.navbar {
+  margin: 10px;  
+  font-size: 1.5rem;
+  display: flex;
+  }

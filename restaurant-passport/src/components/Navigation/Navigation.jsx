@@ -5,6 +5,8 @@ import { NavLink, Route } from "react-router-dom";
 //TODO: Import Components that will appear in Nav here.
 
 export default function NavTabs() {
+
+          
     return (
         <div className="navbar grid-view">
             <Button.Group widths="4" className="navbar">

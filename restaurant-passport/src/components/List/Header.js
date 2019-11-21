@@ -5,7 +5,7 @@ export default function Header() {
 
   const Heading = styled.h1`
     font-size: 40px;
-    // text-shadow: 2px 2px BlueViolet;
+    text-shadow: 2px 2px BlueViolet;
     text-align: center;`
 
   return (
