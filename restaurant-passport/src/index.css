@@ -1,5 +1,8 @@
 @import "./components/Welcome/Welcome.css";
 @import "./components//Description/Description.css";
+@import "./App.css";
+@import "./components/Navigation/Navigation.css";
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+English&display=swap');
 
 body {
   background-color: #87cefa;
@@ -33,4 +36,35 @@ header h1 {
 
 .grid-view div.card.ui {
   margin: 1.25rem;
+}
+
+.logo {
+  color: #406098;
+  font-family: 'IM Fell English', serif;
+  font-size: 3vw;
+  font-style: italic;
+  padding-left: 20px;
+}
+
+.logo:hover {
+  color: red;
+}
+
+span {
+  font-size: 6vw;
+  font-weight: bold;
+}
+
+.navMenu {
+  font-size: 24px;
+  text-align: center;
+  margin-right: 5%;
+  color: #406098; 
+}
+
+.navMenu:hover {
+  color: red;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }

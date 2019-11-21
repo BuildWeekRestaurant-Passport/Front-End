@@ -49,14 +49,15 @@ function App(props) {
 
   return (
     <div className="App">
-      <nav>
-        {signedIn && <NavTabs />}
-
-        {!signedIn && <Link to="/signup">Sign Up</Link>}
-        {!signedIn && <Link to="/login">Login</Link>}
-        {signedIn && <Link to="/logout">Logout</Link>}
-      </nav>
-
+      
+        {signedIn && 
+          <NavTabs>
+            {!signedIn && <Link to="/signup">Sign Up</Link>}
+            {!signedIn && <Link to="/login">Login</Link>}
+            {signedIn && <Link to="/logout">Logout</Link>}
+          </NavTabs>
+        }
+      
 
       {/* <Welcome /> */}
       {/* <Route exact path='/' component={Welcome} /> */}
