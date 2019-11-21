@@ -1,0 +1,26 @@
+.stamp__toggle {
+  background: papayawhip;
+  //   border-radius: 50px;
+  height: 60px;
+  //   position: relative;
+  width: 100px;
+}
+
+.toggle {
+  background: #35e71e;
+  //   border-radius: 50px;
+  height: 60px;
+  //   left: 0;
+  //   position: absolute;
+  transition: 0.2s;
+  width: 100px;
+}
+
+.toggled {
+  background: #1b6d11;
+}
+
+.stamp {
+  color: #fff;
+  //   background-color: #313843;
+}
