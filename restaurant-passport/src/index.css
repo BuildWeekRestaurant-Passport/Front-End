@@ -4,6 +4,7 @@
 @import "./components/Navigation/Navigation.css";
 @import url('https://fonts.googleapis.com/css?family=IM+Fell+English&display=swap');
 
+
 html,body,div,span,applet,object,iframe,h1,h2,h3,
 h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,
 code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,
@@ -46,7 +47,7 @@ table {
 }
 
 body {
-  background-color: #87cefa;
+  background-color: white;
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -81,7 +82,7 @@ header h1 {
 
 .logo {
   color: #406098;
-  font-family: 'IM Fell English', serif !important; 
+  font-family: 'IM Fell English', serif ; 
   font-size: 3vw;
   font-style: italic;
   padding-left: 20px;

@@ -8,7 +8,7 @@ import styled from "styled-components";
 export default function NavTabs() {
     const NavContent = styled.div`
         background-color: white;
-        border: 1px solid;
+        border: 1px solid #d5d7db;
         border-bottom-left-radius: 40px;
         border-bottom-right-radius: 40px;
     `
@@ -23,6 +23,7 @@ export default function NavTabs() {
     `
     const NavMenu = styled.div`
         font-family: 'IM Fell English', serif;
+        font-style: italic;
         position: absolute;              
         width: 40%;
         top: 8px;
@@ -45,16 +46,16 @@ export default function NavTabs() {
                     </h1>
                 </NavLogo>
                 <NavMenu>
-                    <NavLink exact to="/user-profile" className="navMenu">
+                    <NavLink exact to="/user-profile" className="navMenu" activeStyle={{ color: 'red' }}>
                         Profile {/* Welcome back! page - shows recent experiences. Tracks 
                                 progress of percentage of destinations visited vs total.
                                 Suggests random location from list for next outing. */}
                     </NavLink>
-                    <NavLink to="/places" className="navMenu">
+                    <NavLink to="/places" className="navMenu" activeStyle={{ color: 'red' }}>
                         Restaurants {/* Michael's reastaurant list of all restaurants
                                         with visited places stamped. */}
                     </NavLink>
-                    <NavLink to="/stamped" className="navMenu">
+                    <NavLink to="/stamped" className="navMenu" activeStyle={{ color: 'red' }}>
                         Stamps {/* All stamped locations. Will store favorite locations and
                                     top 3 memorable moments from all trips, or something. */}
                     </NavLink>
