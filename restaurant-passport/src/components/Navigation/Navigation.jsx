@@ -67,7 +67,7 @@ export default function NavTabs() {
                     {/* </NavLink> */}
                     <NavLink to="/logout" className="navMenu">Logout</NavLink>
 
-                    <Route exact path="/user-profile" component={userProfile} />  {/* TODO: Add components to routes. */}
+                    <Route exact path="/user-profile" />  {/* TODO: Add components to routes. */}
                     <Route exact path="/places" />
                     <Route path="/stamped" />
                      
