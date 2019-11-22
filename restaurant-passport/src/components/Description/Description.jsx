@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import api from '../../utils/api'
 import styled from "styled-components"
+import WebFont from 'webfontloader';
 
 function Description(props) {
     const [place, setPlace] = useState();
@@ -20,8 +21,6 @@ function Description(props) {
         localStorage.setItem(`Restaurant-${id}-state`, JSON.stringify(stamp))
     })
 
-
-
     useEffect(() => {
         api().get(`/cities/restaurants/${id}`)
             .then(res => {
@@ -38,27 +37,28 @@ function Description(props) {
         setStamp(!stamp);
     };
 
-
     const Card = styled.div`
      display: flex;
      flex-wrap: wrap;
      flex-direction: column;
      justify-content: center;
      align-items: center;
-     background-color: #f0e5e5;
-     margin: 5% 20%;
-     border: solid 4px black;
-     border-radius: 8px;
-     font-weight: 600;
-     font-size: 18px;
-     box-shadow: 7px 7px 5px #2F4F4F;
-      -moz-box-shadow: 7px 7px 5px #2F4F4F;
-      -webkit-box-shadow: 7px 7px 5px #2F4F4F;
-      -khtml-box-shadow: 7px 7px 7px #2F4F4F;`
+     background-color: #FFE4B5;
+     margin: 0% 20%;
+     border: 15px ridge #A41C59;
+     border-radius: 50%;
+     font-weight: 400;
+     font-size: 1.5rem;
+     box-shadow: 12px 12px 8px #2F4F4F;
+      -moz-box-shadow: 15px 15px 10px #2F4F4F;
+      -webkit-box-shadow: 15px 15px 10px #2F4F4F;
+      -khtml-box-shadow: 15px 15px 10px #2F4F4F;`
 
     const Header = styled.h2`
-     font-size: 35px;
+     font-size: 2.25rem;
      text-shadow: 2px 2px BlueViolet;`
+
+     
 
 
     if (!place) {
