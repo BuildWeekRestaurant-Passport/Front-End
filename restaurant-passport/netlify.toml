@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish="/build"
+  publish="restaurant-passport/build"
   base = "restaurant-passport"
   
   [[redirects]]
