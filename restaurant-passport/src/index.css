@@ -1,9 +1,5 @@
 @import "./components/Welcome/Welcome.css";
 @import "./components//Description/Description.css";
-<<<<<<< HEAD
-@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap");
-
-=======
 @import "./App.css";
 @import "./components/Navigation/Navigation.css";
 @import url('https://fonts.googleapis.com/css?family=IM+Fell+English&display=swap');
@@ -48,7 +44,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
->>>>>>> e1de06108bd75469c14dec527394f3dd434601db
 
 body {
   
@@ -90,13 +85,6 @@ header h1 {
   margin: 1.25rem;
 }
 
-<<<<<<< HEAD
-.navbar {
-  margin: 10px;  
-  font-size: 1.5rem;
-  display: flex;
-  }
-=======
 .logo {
   color: #406098;
   font-family: 'IM Fell English', serif !important; 
@@ -127,4 +115,3 @@ span {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
->>>>>>> e1de06108bd75469c14dec527394f3dd434601db

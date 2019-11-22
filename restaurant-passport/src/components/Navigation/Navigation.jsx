@@ -6,10 +6,6 @@ import styled from "styled-components";
 //TODO: Import Components that will appear in Nav here.
 
 export default function NavTabs() {
-<<<<<<< HEAD
-
-          
-=======
     const NavContent = styled.div`
         background-color: white;
         border: 1px solid;
@@ -35,7 +31,6 @@ export default function NavTabs() {
         padding-bottom: 1%;
         text-align: right;
     `
->>>>>>> e1de06108bd75469c14dec527394f3dd434601db
     return (
         <NavContent>
             <NavBar>
