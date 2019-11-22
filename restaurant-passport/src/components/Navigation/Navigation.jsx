@@ -1,36 +1,78 @@
 import React from "react";
-import { Button } from "semantic-ui-react";
-import { NavLink, Route } from "react-router-dom";
+// import { Button } from "semantic-ui-react";
+import { Link, NavLink, Route } from "react-router-dom";
+import styled from "styled-components";
+import App from "../../App"
+import userProfile from "../Profile/Profile";
 
 //TODO: Import Components that will appear in Nav here.
 
-export default function NavTabs() {
+export default function NavTabs(props) {
+    const NavContent = styled.div`
+        background-color: white;
+        border: 1px solid #d5d7db;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+    `
+    const NavBar = styled.div`
+        display: flex;
+        background-color: white;
+        border-radius: 10px;
+        margin: 10px 2%;
+    `
+    const NavLogo = styled.div`
+        border-radius: 8px;
+    `
+    const NavMenu = styled.div`
+        font-family: 'IM Fell English', serif;
+        font-style: italic;
+        position: absolute;              
+        width: 40%;
+        top: 8px;
+        right: 16px;
+        padding-top: 3.5%;
+        padding-bottom: 1%;
+        text-align: right;
+    `
     return (
-        <div className="navbar grid-view">
-            <Button.Group widths="4" className="navbar">
-                <Button as={NavLink} exact to="/user-profile" activeClassName="activeNavButton">
-                    Profile {/* Welcome back! page - shows recent experiences. Tracks 
-                             progress of percentage of destinations visited vs total.
-                             Suggests random location from list for next outing. */}
-                </Button>
-                <Button as={NavLink} to="/places" activeClassName="activeNavButton">
-                    View Restaurants {/* Michael's reastaurant list of all restaurants
-                                     with visited places stamped. */}
-                </Button>
-                <Button as={NavLink} to="/stamped" activeClassName="activeNavButton">
-                    Stamped Collection {/* All stamped locations. Will store favorite locations and
-                                top 3 memorable moments from all trips, or something. */}
-                </Button>
-                <Button as={NavLink} to="/account" activeClassName="activeNavButton">
-                    Preferences {/* Account page - user selects cuisine preferences,
-                                environment types (outdoor, rooftop, live music, etc)*/}
-                </Button>
-            </Button.Group>
+        <NavContent>
+            <NavBar>
+                <NavLogo>
+                    <h1>
+                        <NavLink exact to="/user-profile" className="logo">
+                            <span>R</span>
+                            estaurant
+                            <span> P</span>
+                            assport
+                        </NavLink>
+                    </h1>
+                </NavLogo>
+                <NavMenu>
+                    <NavLink exact to="/user-profile" className="navMenu" activeStyle={{ color: 'red' }}>
+                        Profile {/* Welcome back! page - shows recent experiences. Tracks 
+                                progress of percentage of destinations visited vs total.
+                                Suggests random location from list for next outing. */}
+                    </NavLink>
+                    <NavLink to="/places" className="navMenu" activeStyle={{ color: 'red' }}>
+                        Restaurants {/* Michael's reastaurant list of all restaurants
+                                        with visited places stamped. */}
+                    </NavLink>
+                    <NavLink to="/stamped" className="navMenu" activeStyle={{ color: 'red' }}>
+                        Stamps {/* All stamped locations. Will store favorite locations and
+                                    top 3 memorable moments from all trips, or something. */}
+                    </NavLink>
+                    {/* <NavLink to="/account" className="navMenu">
+                        Preferences {/* Account page - user selects cuisine preferences,
+                                    environment types (outdoor, rooftop, live music, etc)*/}
+                    {/* </NavLink> */}
+                    {props.signedIn && <NavLink to="/logout" className="navMenu">Logout</NavLink>}
 
-            <Route exact path="/account" />
-            <Route exact path="/places" />
-            <Route path="/stamped" />
-            <Route path="/user-profile" />
-        </div>
+                    <Route exact path="/user-profile" />  {/* TODO: Add components to routes. */}
+                    <Route exact path="/places" />
+                    <Route path="/stamped" />
+
+                </NavMenu>
+            </NavBar>
+        </NavContent>
     )
 }

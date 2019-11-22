@@ -30,16 +30,29 @@ function Signup(props) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            {error && <div className='error'>{error}</div>}
+        <div>
+            {props.signup === true ? <form onSubmit={handleSubmit}>
+                {error && <div className='error'>{error}</div>}
 
-            <input type="email" name='email' placeholder='Enter your email' value={data.email} onChange={handleChange} />
-            <input type="username" name='username' placeholder='Enter your username' value={data.username} onChange={handleChange} />
-            <input type="password" name='password' placeholder='Enter a password' value={data.password} onChange={handleChange} />
+                <input type="email" name='email' placeholder='Enter your email' value={data.email} onChange={handleChange} />
+                <input type="username" name='username' placeholder='Enter your username' value={data.username} onChange={handleChange} />
+                <input type="password" name='password' placeholder='Enter a password' value={data.password} onChange={handleChange} />
 
-            <button type='submit'>Submit</button>
+                <button type='submit'>Submit</button>
 
-        </form>
+            </form> : <form onSubmit={handleSubmit} style={props.reveal}>
+                    {error && <div className='error'>{error}</div>}
+
+                    <input type="email" name='email' placeholder='Enter your email' value={data.email} onChange={handleChange} />
+                    <input type="username" name='username' placeholder='Enter your username' value={data.username} onChange={handleChange} />
+                    <input type="password" name='password' placeholder='Enter a password' value={data.password} onChange={handleChange} />
+
+                    <button type='submit'>Submit</button>
+
+                </form>}
+
+        </div>
+
     )
 }
 

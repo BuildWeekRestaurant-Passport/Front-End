@@ -29,19 +29,31 @@ function Signin(props) {
                 props.history.push("/places")
             })
             .catch(err => {
-                setError(err.response.data.message)
+                throw (err)
             })
+
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            {error && <div className="error">{error}</div>}
+        <div>
+            {props.login === true ? <form onSubmit={handleSubmit}>
+                {error && <div className="error">{error}</div>}
 
-            <input type="username" name="username" placeholder="Username" value={data.username} onChange={handleChange} />
-            <input type="password" name="password" placeholder="Password" value={data.password} onChange={handleChange} />
+                <input type="username" name="username" placeholder="Username" value={data.username} onChange={handleChange} />
+                <input type="password" name="password" placeholder="Password" value={data.password} onChange={handleChange} />
 
-            <button type="submit">Sign In</button>
-        </form>
+                <button type="submit">Sign In</button>
+            </form> : <form onSubmit={handleSubmit} style={props.reveal}>
+                    {error && <div className="error">{error}</div>}
+
+                    <input type="username" name="username" placeholder="Username" value={data.username} onChange={handleChange} />
+                    <input type="password" name="password" placeholder="Password" value={data.password} onChange={handleChange} />
+
+                    <button type="submit">Sign In</button>
+                </form>}
+
+        </div>
+
     )
 }
 

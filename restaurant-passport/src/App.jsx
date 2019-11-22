@@ -49,19 +49,14 @@ function App(props) {
 
   return (
     <div className="App">
-      <nav>
-        {signedIn && <NavTabs />}
 
-        {!signedIn && <Link to="/signup">Sign Up</Link>}
-        {!signedIn && <Link to="/login">Login</Link>}
-        {signedIn && <Link to="/logout">Logout</Link>}
-      </nav>
+      <NavTabs signedIn={signedIn} />
 
 
       {/* <Welcome /> */}
-      {/* <Route exact path='/' component={Welcome} /> */}
-      <Route path="/login" component={Login} />
-      <Route path="/signup" component={Signup} />
+      <Route exact path='/' component={Welcome} />
+      {/* <Route path="/login" component={Login} />
+      <Route path="/signup" component={Signup} /> */}
 
       <ProtectedRoute exact path='/places' component={List} />
       <Route exact path="/places/:id" render={props => {
@@ -73,7 +68,5 @@ function App(props) {
 }
 
 export default App
-
-
 
 
