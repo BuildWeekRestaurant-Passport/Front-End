@@ -1,0 +1,11 @@
+input {
+    color: #406098;
+    font-family: 'IM Fell English', serif;
+    font-size: 1.5vw;
+    font-style: italic;
+    width: 300px;
+    height: 3px;
+    padding: 1%;
+    border: 1px solid #406098;
+    margin: 1%;
+}
