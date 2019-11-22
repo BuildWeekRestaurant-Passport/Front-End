@@ -24,11 +24,11 @@ function App(props) {
   ])
   console.log(savedPlace)
   // const [place, setPlace] = useState({
-  //   name: `Zoli's NY Pizza`,
-  //   address: '14910 Midway Rd',
+  //   name: `Knife`,
+  //   address: '5300 E Mockingbird Ln',
   //   city: 'Dallas',
   //   city_id: 2,
-  //   description: 'pizza'
+  //   description: 'bbq'
   // })
 
   // useEffect(() => {
