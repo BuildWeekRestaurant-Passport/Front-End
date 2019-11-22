@@ -38,29 +38,41 @@ function Description(props) {
     };
 
     const Card = styled.div`
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 1.5625rem;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #000000;
+    font-weight: 500;
+    text-decoration: none;
+    font-style: italic;
+    font-variant: normal;
+    text-transform: none;
+
+     width: 60%;
+     height: 50%;
+     padding: 3.75%;
      display: flex;
      flex-wrap: wrap;
      flex-direction: column;
      justify-content: center;
      align-items: center;
-     background-color: #FFE4B5;
-     margin: 0% 20%;
-     border: 15px ridge #A41C59;
+     background-color: #FFCC99;
+     margin: 6% 15%;
+     border: 18px ridge #727EA4;
      border-radius: 50%;
-     font-weight: 400;
-     font-size: 1.5rem;
-     box-shadow: 12px 12px 8px #2F4F4F;
-      -moz-box-shadow: 15px 15px 10px #2F4F4F;
-      -webkit-box-shadow: 15px 15px 10px #2F4F4F;
-      -khtml-box-shadow: 15px 15px 10px #2F4F4F;`
+     
+      box-shadow: 15px 15px 10px #181818;
+       -moz-box-shadow: 20px 18px 10px #2F4F4F;
+       -webkit-box-shadow: 20px 18px 10px #2F4F4F;
+       -khtml-box-shadow: 20px 18px 10px #2F4F4F;`
 
+       
     const Header = styled.h2`
-     font-size: 2.25rem;
-     text-shadow: 2px 2px BlueViolet;`
+     font-size: 3rem;
+     text-shadow: 3px 3px BlueViolet;`
 
      
-
-
     if (!place) {
         return <div>Loading restaurant information...</div>
     }

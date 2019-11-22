@@ -47,7 +47,11 @@ table {
 }
 
 body {
-  background-color: white;
+  background: #21B2FF;
+  background: -moz-linear-gradient(left, #21B2FF 0%, #E4EBEF 50%, #22B2FF 100%);
+  background: -webkit-linear-gradient(left, #21B2FF 0%, #E4EBEF 50%, #22B2FF 100%);
+  background: linear-gradient(to right, #21B2FF 0%, #E4EBEF 50%, #22B2FF 100%);
+  
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
