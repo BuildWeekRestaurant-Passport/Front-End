@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish="restaurant-passport/build"
+  base = "restaurant-passport"
+  
+  [[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
