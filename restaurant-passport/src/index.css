@@ -4,6 +4,7 @@
 @import "./components/Navigation/Navigation.css";
 @import url('https://fonts.googleapis.com/css?family=IM+Fell+English&display=swap');
 
+
 html,body,div,span,applet,object,iframe,h1,h2,h3,
 h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,
 code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,
@@ -46,12 +47,16 @@ table {
 }
 
 body {
+<<<<<<< HEAD
   
   background: #C0CEC6;
   background: -moz-linear-gradient(45deg, #C0CEC6 0%, #239BA4 51%, #9EC5B7 100%);
   background: -webkit-linear-gradient(45deg, #C0CEC6 0%, #239BA4 51%, #9EC5B7 100%);
   background: linear-gradient(45deg, #C0CEC6 0%, #239BA4 51%, #9EC5B7 100%);
   
+=======
+  background-color: white;
+>>>>>>> 193b45ac0f8fa8bc50f8443f07672740f323dfc1
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -87,7 +92,7 @@ header h1 {
 
 .logo {
   color: #406098;
-  font-family: 'IM Fell English', serif !important; 
+  font-family: 'IM Fell English', serif ; 
   font-size: 3vw;
   font-style: italic;
   padding-left: 20px;
