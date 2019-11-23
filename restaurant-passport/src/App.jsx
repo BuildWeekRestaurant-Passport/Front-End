@@ -47,21 +47,19 @@ function App(props) {
   return (
     <div className="App">
 
-    <NavTabs signedIn={signedIn} />
+      <NavTabs signedIn={signedIn} />
 
 
-    {/* <Welcome /> */}
-    <Route exact path='/' component={Welcome} />
-    {/* <Route path="/login" component={Login} />
-    <Route path="/signup" component={Signup} /> */}
+      <Route exact path='/' component={Welcome} />
 
-    <ProtectedRoute exact path='/places' component={List} />
-    <Route exact path="/user-profile" component={UserProfile}/> 
-    <Route exact path="/places/:id" render={props => {
-      return <Description {...props} setSavedPlace={setSavedPlace} savedPlace={savedPlace} />
-    }} />
-    <ProtectedRoute exact path="/logout" component={Logout} />
-  </div>
+
+      <ProtectedRoute exact path='/places' component={List} />
+      <Route exact path="/user-profile" component={UserProfile} />
+      <Route exact path="/places/:id" render={props => {
+        return <Description {...props} setSavedPlace={setSavedPlace} savedPlace={savedPlace} />
+      }} />
+      <ProtectedRoute exact path="/logout" component={Logout} />
+    </div>
   );
 }
 

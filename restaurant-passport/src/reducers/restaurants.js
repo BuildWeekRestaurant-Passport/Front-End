@@ -11,11 +11,11 @@ export const initialState = {
       restName: ""
     }
   ],
-  isLoading: false,
+  isLoading: true,
   error: null
 };
 
-export function reducer(state = initialState, action) {
+export function reducerList(state = initialState, action) {
   switch (action.type) {
     case FETCH_LIST_START:
       return {

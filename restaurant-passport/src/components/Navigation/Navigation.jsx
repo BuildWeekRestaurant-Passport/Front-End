@@ -35,43 +35,43 @@ export default function NavTabs(props) {
     `
     return (
         <NavContent>
-        <NavBar>
-            <NavLogo>
-                <h1>
-                    <NavLink exact to="/user-profile" className="logo">
-                        <span>R</span>
-                        estaurant
+            <NavBar>
+                <NavLogo>
+                    <h1>
+                        <NavLink exact to="/user-profile" className="logo">
+                            <span>R</span>
+                            estaurant
                         <span> P</span>
-                        assport
+                            assport
                     </NavLink>
-                </h1>
-            </NavLogo>
-            <NavMenu>
-                <NavLink exact to="/user-profile" className="navMenu" activeStyle={{ color: 'red' }}>
-                    Profile {/* Welcome back! page - shows recent experiences. Tracks 
+                    </h1>
+                </NavLogo>
+                <NavMenu>
+                    <NavLink exact to="/user-profile" className="navMenu" activeStyle={{ color: 'red' }}>
+                        Profile {/* Welcome back! page - shows recent experiences. Tracks 
                             progress of percentage of destinations visited vs total.
                             Suggests random location from list for next outing. */}
-                </NavLink>
-                <NavLink to="/places" className="navMenu" activeStyle={{ color: 'red' }}>
-                    Restaurants {/* Michael's reastaurant list of all restaurants
+                    </NavLink>
+                    <NavLink to="/places" className="navMenu" activeStyle={{ color: 'red' }}>
+                        Restaurants {/* Michael's reastaurant list of all restaurants
                                     with visited places stamped. */}
-                </NavLink>
-                <NavLink to="/stamped" className="navMenu" activeStyle={{ color: 'red' }}>
-                    Stamps {/* All stamped locations. Will store favorite locations and
+                    </NavLink>
+                    <NavLink to="/stamped" className="navMenu" activeStyle={{ color: 'red' }}>
+                        Stamps {/* All stamped locations. Will store favorite locations and
                                 top 3 memorable moments from all trips, or something. */}
-                </NavLink>
-                {/* <NavLink to="/account" className="navMenu">
+                    </NavLink>
+                    {/* <NavLink to="/account" className="navMenu">
                     Preferences {/* Account page - user selects cuisine preferences,
                                 environment types (outdoor, rooftop, live music, etc)*/}
-                {/* </NavLink> */}
-                {props.signedIn && <NavLink to="/logout" className="navMenu">Logout</NavLink>}
+                    {/* </NavLink> */}
+                    {props.signedIn && <NavLink to="/logout" className="navMenu">Logout</NavLink>}
 
-                <Route exact path="/user-profile" />  {/* TODO: Add components to routes. */}
-                <Route exact path="/places" />
-                <Route path="/stamped" />
+                    <Route exact path="/user-profile" />  {/* TODO: Add components to routes. */}
+                    <Route exact path="/places" />
+                    <Route path="/stamped" />
 
-            </NavMenu>
-        </NavBar>
-    </NavContent>
+                </NavMenu>
+            </NavBar>
+        </NavContent>
     )
 }
