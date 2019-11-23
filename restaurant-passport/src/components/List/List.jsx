@@ -6,6 +6,7 @@ import { fetchPlaces } from '../../actions/restaurants'
 import Description from '../Description/Description'
 import SearchForm from '../SearchForm/SearchForm';
 import axios from 'axios'
+import './List.css';
 
 function List(props) {
     const [restaurants, setRestaurants] = useState([]);
@@ -44,10 +45,13 @@ function List(props) {
             <section className='filtered-list'>
                 {filteredRestaurants.map((restaurant, i) => {
                     return (
-                        <div key={i}>
-                            <Link to={`/places/${restaurant.restID}`}>
-                                <h2>{restaurant.restName}</h2>
-                            </Link>
+                        <div className='filtered-restaurant' key={i}>
+                            <h2>
+                                <span className='cutlery'>🍴</span>
+                                <Link className='restaurant-link' to={`/places/${restaurant.restID}`}>
+                                    {restaurant.restName}
+                                </Link>
+                            </h2>
                         </div>
                     )
                 })}

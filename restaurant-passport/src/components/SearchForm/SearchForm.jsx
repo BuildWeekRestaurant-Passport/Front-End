@@ -1,4 +1,5 @@
 import React from 'react';
+import './SearchForm.css';
 
 const SearchForm = (props) => {
     return (
@@ -8,6 +9,7 @@ const SearchForm = (props) => {
                 placeholder='In the mood for...'
                 value={props.searchTerm}
                 onChange={props.handleChange}
+                className='search'
             />
         </form>
     );
