@@ -22,7 +22,7 @@ function Signup(props) {
         api()
             .post('users/register', data)
             .then(result => {
-                props.history.push('/login')
+                props.history.push('/')
             })
             .catch(err => {
                 setError(err.response.data.message)
