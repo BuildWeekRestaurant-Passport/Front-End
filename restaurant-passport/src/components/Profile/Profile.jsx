@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components";
 
-const mainDiv = styled.div`
+const MainDiv = styled.div`
     position: relative;
     text-align: center;
     background-color: #e5e7ec;
@@ -9,7 +9,7 @@ const mainDiv = styled.div`
     border: 1px solid #a6a7a7;
     border-radius: 40px;
 `
-const welcomeDiv = styled.div`
+const WelcomeDiv = styled.div`
     position: absolute;
     top: 11%;
     left: 25%;
@@ -22,27 +22,33 @@ const welcomeDiv = styled.div`
     border: 1px solid #10103f;
     border-radius: 20px;
 `
+const SuggestionDiv = styled.div`
+    padding : 2%;
+`
+const MemoriesDiv = styled.div`
+    padding : 2%;
+`
 
-function userProfile() {
+function UserProfile() {
     return (
         <div className="wrapper">
-            <mainDiv>
-                <welcomeDiv>
+            <MainDiv>
+                <WelcomeDiv>
                     <h1>Welcome back fellow foodie!</h1>
                     <p>Your dream cuisines await.</p>
-                </welcomeDiv>
-                <memoriesDiv>
+                </WelcomeDiv>
+                <MemoriesDiv>
                     <p>Take a look at some of your recent dining experiences.</p>
                     {/* Carousel/display of images from recent outings */}
-                </memoriesDiv>
-                <suggestionDiv>
+                </MemoriesDiv>
+                <SuggestionDiv>
                     <p>Is your stomach talking to you? Maybe one of these places from your list can help.</p>
                 {/* Suggest an outing to a restaurant from user's list */}
-                </suggestionDiv>
-            </mainDiv>            
+                </SuggestionDiv>
+            </MainDiv>            
         </div>
 
     )
 }
 
-export default userProfile
+export default UserProfile

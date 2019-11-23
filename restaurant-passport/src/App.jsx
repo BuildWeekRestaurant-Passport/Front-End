@@ -25,11 +25,11 @@ function App(props) {
   ])
   console.log(savedPlace)
   // const [place, setPlace] = useState({
-  //   name: `Knife`,
-  //   address: '5300 E Mockingbird Ln',
+  //   name: `Zoli's NY Pizza`,
+  //   address: '14910 Midway Rd',
   //   city: 'Dallas',
   //   city_id: 2,
-  //   description: 'bbq'
+  //   description: 'pizza'
   // })
 
   // useEffect(() => {
@@ -45,14 +45,18 @@ function App(props) {
 
   return (
     <div className="App">
-
-      <NavTabs signedIn={signedIn} />
-
+      <nav>
+        {signedIn && <NavTabs />}
+        {!signedIn && <Link to="/signup">Sign Up</Link>}
+        {!signedIn && <Link to="/login">Login</Link>}
+        {/* {signedIn && <Link to="/logout">Logout</Link>} */}
+      </nav>
 
       {/* <Welcome /> */}
-      <Route exact path='/' component={Welcome} />
-      {/* <Route path="/login" component={Login} />
-      <Route path="/signup" component={Signup} /> */}
+      {/* <Route exact path='/' component={Welcome} /> */}
+      <Route path="/login" component={Login} />
+      <Route path="/signup" component={Signup} />
+
       <ProtectedRoute exact path='/places' component={List} />
       <Route exact path="/places/:id" render={props => {
         return <Description {...props} setSavedPlace={setSavedPlace} savedPlace={savedPlace} />
