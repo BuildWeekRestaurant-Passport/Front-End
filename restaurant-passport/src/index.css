@@ -1,17 +1,91 @@
+@import "./components/Signup/Signup.css";
+@import "./components/Login/Login.css";
 @import "./components/Welcome/Welcome.css";
 @import "./components//Description/Description.css";
 @import "./App.css";
 @import "./components/Navigation/Navigation.css";
-@import url('https://fonts.googleapis.com/css?family=IM+Fell+English&display=swap');
+@import url("https://fonts.googleapis.com/css?family=IM+Fell+English&display=swap");
 
-
-html,body,div,span,applet,object,iframe,h1,h2,h3,
-h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,
-code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,
-sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,
-label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,
-aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,
-menu,nav,output,ruby,section,summary,time,mark,audio,
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
 video {
   margin: 0;
   padding: 0;
@@ -21,7 +95,16 @@ video {
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
 section {
   display: block;
 }
@@ -36,9 +119,11 @@ blockquote,
 q {
   quotes: none;
 }
-blockquote:before,blockquote:after,q:before,
+blockquote:before,
+blockquote:after,
+q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -47,11 +132,16 @@ table {
 }
 
 body {
-  background: #21B2FF;
-  background: -moz-linear-gradient(left, #21B2FF 0%, #E4EBEF 50%, #22B2FF 100%);
-  background: -webkit-linear-gradient(left, #21B2FF 0%, #E4EBEF 50%, #22B2FF 100%);
-  background: linear-gradient(to right, #21B2FF 0%, #E4EBEF 50%, #22B2FF 100%);
-  
+  background: #21b2ff;
+  background: -moz-linear-gradient(left, #21b2ff 0%, #e4ebef 50%, #22b2ff 100%);
+  background: -webkit-linear-gradient(
+    left,
+    #21b2ff 0%,
+    #e4ebef 50%,
+    #22b2ff 100%
+  );
+  background: linear-gradient(to right, #21b2ff 0%, #e4ebef 50%, #22b2ff 100%);
+
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -60,7 +150,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -87,7 +176,7 @@ header h1 {
 
 .logo {
   color: #406098;
-  font-family: 'IM Fell English', serif ; 
+  font-family: "IM Fell English", serif;
   font-size: 3vw;
   font-style: italic;
   padding-left: 20px;
@@ -106,7 +195,7 @@ span {
   font-size: 24px;
   text-align: center;
   margin-right: 5%;
-  color: #406098; 
+  color: #406098;
 }
 
 .navMenu:hover {

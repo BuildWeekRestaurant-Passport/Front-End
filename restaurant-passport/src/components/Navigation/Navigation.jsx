@@ -7,7 +7,7 @@ import userProfile from "../Profile/Profile";
 
 //TODO: Import Components that will appear in Nav here.
 
-export default function NavTabs() {
+export default function NavTabs(props) {
     const NavContent = styled.div`
         background-color: white;
         border: 1px solid #d5d7db;
@@ -65,13 +65,13 @@ export default function NavTabs() {
                         Preferences {/* Account page - user selects cuisine preferences,
                                     environment types (outdoor, rooftop, live music, etc)*/}
                     {/* </NavLink> */}
-                    <NavLink to="/logout" className="navMenu">Logout</NavLink>
+                    {props.signedIn && <NavLink to="/logout" className="navMenu">Logout</NavLink>}
 
                     <Route exact path="/user-profile" />  {/* TODO: Add components to routes. */}
                     <Route exact path="/places" />
                     <Route path="/stamped" />
-                     
-                </NavMenu>              
+
+                </NavMenu>
             </NavBar>
         </NavContent>
     )

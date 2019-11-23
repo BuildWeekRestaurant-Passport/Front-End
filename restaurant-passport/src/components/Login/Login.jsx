@@ -29,20 +29,45 @@ function Signin(props) {
                 props.history.push("/places")
             })
             .catch(err => {
-                setError(err.response.data.message)
+                throw (err)
             })
 
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            {error && <div className="error">{error}</div>}
+        <div className='form'>
+            {props.login === true ? <div className='signupSection'>
+                <form onSubmit={handleSubmit} className='signupForm'>
+                    {error && <div className="error">{error}</div>}
+                    <h2>Login</h2>
+                    <ul className="noBullet">
+                        <li>
+                            <label htmlFor="username"></label>
+                            <input type="username" name="username" placeholder="Username" value={data.username} onChange={handleChange} className='inputFields' />
+                        </li>
+                        <li>
+                            <label htmlFor="password"></label>
+                            <input type="password" name="password" placeholder="Password" value={data.password} onChange={handleChange} className='inputFields' />
 
-            <input type="username" name="username" placeholder="Username" value={data.username} onChange={handleChange} />
-            <input type="password" name="password" placeholder="Password" value={data.password} onChange={handleChange} />
+                        </li>
+                        <li id='center-btn'>
+                            <button type="submit" id='join-btn'>Sign In</button>
 
-            <button type="submit">Sign In</button>
-        </form>
+                        </li>
+                    </ul>
+
+                </form>
+            </div> : <form onSubmit={handleSubmit} style={props.reveal}>
+                    {error && <div className="error">{error}</div>}
+
+                    <input type="username" name="username" placeholder="Username" value={data.username} onChange={handleChange} />
+                    <input type="password" name="password" placeholder="Password" value={data.password} onChange={handleChange} />
+
+                    <button type="submit">Sign In</button>
+                </form>}
+
+        </div>
+
     )
 }
 
