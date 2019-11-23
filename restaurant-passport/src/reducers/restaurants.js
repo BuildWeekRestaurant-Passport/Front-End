@@ -11,7 +11,7 @@ export const initialState = {
       restName: ""
     }
   ],
-  isLoading: false,
+  isLoading: true,
   error: null
 };
 

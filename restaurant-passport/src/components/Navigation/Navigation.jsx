@@ -3,7 +3,6 @@ import React from "react";
 import { Link, NavLink, Route } from "react-router-dom";
 import styled from "styled-components";
 import App from "../../App"
-import userProfile from "../Profile/Profile";
 
 //TODO: Import Components that will appear in Nav here.
 
@@ -42,34 +41,35 @@ export default function NavTabs(props) {
                         <NavLink exact to="/user-profile" className="logo">
                             <span>R</span>
                             estaurant
-                            <span> P</span>
+                        <span> P</span>
                             assport
-                        </NavLink>
+                    </NavLink>
                     </h1>
                 </NavLogo>
                 <NavMenu>
                     <NavLink exact to="/user-profile" className="navMenu" activeStyle={{ color: 'red' }}>
                         Profile {/* Welcome back! page - shows recent experiences. Tracks 
-                                progress of percentage of destinations visited vs total.
-                                Suggests random location from list for next outing. */}
+                            progress of percentage of destinations visited vs total.
+                            Suggests random location from list for next outing. */}
                     </NavLink>
                     <NavLink to="/places" className="navMenu" activeStyle={{ color: 'red' }}>
                         Restaurants {/* Michael's reastaurant list of all restaurants
-                                        with visited places stamped. */}
+                                    with visited places stamped. */}
                     </NavLink>
                     <NavLink to="/stamped" className="navMenu" activeStyle={{ color: 'red' }}>
                         Stamps {/* All stamped locations. Will store favorite locations and
-                                    top 3 memorable moments from all trips, or something. */}
+                                top 3 memorable moments from all trips, or something. */}
                     </NavLink>
                     {/* <NavLink to="/account" className="navMenu">
-                        Preferences {/* Account page - user selects cuisine preferences,
-                                    environment types (outdoor, rooftop, live music, etc)*/}
+                    Preferences {/* Account page - user selects cuisine preferences,
+                                environment types (outdoor, rooftop, live music, etc)*/}
                     {/* </NavLink> */}
                     {props.signedIn && <NavLink to="/logout" className="navMenu">Logout</NavLink>}
 
                     <Route exact path="/user-profile" />  {/* TODO: Add components to routes. */}
                     <Route exact path="/places" />
                     <Route path="/stamped" />
+
                 </NavMenu>
             </NavBar>
         </NavContent>

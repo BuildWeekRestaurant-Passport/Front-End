@@ -11,19 +11,23 @@ import './List.css';
 function List(props) {
     const [restaurants, setRestaurants] = useState([]);
 
+    // useEffect(() => {
+    //     api()
+    //         .get(
+    //             "/cities/2/restaurants"
+    //         )
+    //         .then(res => {
+    //             console.log(res.data.restaurants);
+    //             setRestaurants(res.data.restaurants)
+    //         })
+    //         .catch(err => {
+    //             throw (err)
+    //         })
+    // }, []);
+
     useEffect(() => {
-        api()
-            .get(
-                "/cities/2/restaurants"
-            )
-            .then(res => {
-                console.log(res.data.restaurants);
-                setRestaurants(res.data.restaurants)
-            })
-            .catch(err => {
-                throw (err)
-            })
-    }, []);
+        props.fetchPlaces()
+    }, [])
 
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -32,32 +36,57 @@ function List(props) {
         // console.log(searchTerm);
     };
 
-    const filteredRestaurants = restaurants.filter(restaurant => {
-        return restaurant.restDesc.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1;
-    });
-    // console.log(filteredRestaurants);
 
 
-    // This is your restaurant array
-    return (
-        <div>
-            <SearchForm handleChange={handleChange} searchTerm={searchTerm} />
-            <section className='filtered-list'>
-                {filteredRestaurants.map((restaurant, i) => {
-                    return (
-                        <div className='filtered-restaurant' key={i}>
-                            <h2>
-                                <span className='cutlery'>🍴</span>
-                                <Link className='restaurant-link' to={`/places/${restaurant.restID}`}>
-                                    {restaurant.restName}
-                                </Link>
-                            </h2>
-                        </div>
-                    )
-                })}
-            </section>
-        </div>
-    )
+
+
+    if (!props.isLoading) {
+        const filteredRestaurants = props.places.filter(restaurant => {
+            return restaurant.restDesc.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1;
+        });
+
+
+        // This is your restaurant array
+        return (
+            <div>
+                <SearchForm handleChange={handleChange} searchTerm={searchTerm} />
+                <section className='filtered-list'>
+                    {filteredRestaurants.map((restaurant, i) => {
+                        return (
+                            <div className='filtered-restaurant' key={i}>
+                                <h2>
+                                    <span className='cutlery'>🍴</span>
+                                    <Link className='restaurant-link' to={`/places/${restaurant.restID}`}>
+                                        {restaurant.restName}
+                                    </Link>
+                                </h2>
+                            </div>
+                        )
+                    })}
+                </section>
+
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <h2>Loading...</h2>
+            </div>
+        )
+    }
+
 }
 
-export default List;
+function mapStateToProps(state) {
+    return {
+        places: state.places,
+        isLoading: state.isLoading,
+        error: state.error
+    }
+}
+
+const mapDispatchToProps = {
+    fetchPlaces
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(List);

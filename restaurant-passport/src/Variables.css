@@ -1,4 +1,4 @@
-@blue : #406098;
+/* @blue : #406098;
 @navy : #0A3055;
 @red : 1px solid red;
 @background-phrase : rgba(221, 223, 224, 0.7);
@@ -14,4 +14,4 @@
 @portrait : '(min-width: 580px) and (max-width: 699px)';
 @tablet : '(min-width: 700px) and (max-width: 999px)';
 @desktop : '(min-width: 1000px ) and (max-width: 1500px)';
-/*# sourceMappingURL=Variables.css.map */
+# sourceMappingURL=Variables.css.map */

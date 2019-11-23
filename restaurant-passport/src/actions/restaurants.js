@@ -9,9 +9,7 @@ export function fetchPlaces() {
   return dispatch => {
     dispatch({ type: FETCH_LIST_START });
     api()
-      .get(
-        "https://build-restaurant-passport.herokuapp.com/cities/2/restaurants"
-      )
+      .get("/cities/2/restaurants")
       .then(res => {
         dispatch({ type: FETCH_LIST_SUCCESS, payload: res.data.restaurants });
       })
