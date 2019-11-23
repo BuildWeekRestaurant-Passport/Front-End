@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react'
 import api from '../../utils/api'
 import styled from "styled-components"
 import WebFont from 'webfontloader';
+import { connect } from "react-redux";
+import { fetchDescription } from '../../actions/description'
 import { FaCheck } from 'react-icons/fa';
 
 
@@ -23,15 +25,19 @@ function Description(props) {
         localStorage.setItem(`Restaurant-${id}-state`, JSON.stringify(stamp))
     })
 
+    // useEffect(() => {
+    //     api().get(`/cities/restaurants/${id}`)
+    //         .then(res => {
+    //             console.log(res.data)
+    //             setPlace(res.data)
+    //         })
+    //         .catch(err => {
+    //             throw (err)
+    //         })
+    // }, [])
+
     useEffect(() => {
-        api().get(`/cities/restaurants/${id}`)
-            .then(res => {
-                console.log(res.data)
-                setPlace(res.data)
-            })
-            .catch(err => {
-                throw (err)
-            })
+        props.fetchDescription(id)
     }, [])
 
     const toggleMode = e => {
@@ -75,28 +81,46 @@ function Description(props) {
      text-shadow: 3px 3px BlueViolet;`
 
 
-    if (!place) {
-        return <div>Loading restaurant information...</div>
+    if (!props.isLoading) {
+        return (
+            <Card>
+                <Header>{props.description.name}</Header>
+                <h2>{props.description.address}</h2>
+                <p>{props.description.description}</p>
+                <h3>Been here? Stamp it!</h3>
+
+                <div className="stamp__toggle">
+
+                    <div
+                        onClick={toggleMode}
+                        className={stamp ? 'toggle toggled' : 'toggle'}
+                    ><FaCheck /></div>
+                </div>
+
+            </Card>
+
+        )
+    } else {
+        return (
+            <div>
+                <h2>Loading restaurant data</h2>
+            </div>
+        )
     }
 
-    return (
-        <Card>
-            <Header>{place.name}</Header>
-            <h2>{place.address}</h2>
-            <p>{place.description}</p>
-            <h3>Been here? Stamp it!</h3>
 
-            <div className="stamp__toggle">
-
-                <div
-                    onClick={toggleMode}
-                    className={stamp ? 'toggle toggled' : 'toggle'}
-                ><FaCheck /></div>
-            </div>
-
-        </Card>
-
-    )
 }
 
-export default Description
+function mapStateToProps(state) {
+    return {
+        description: state.description.description,
+        isLoading: state.description.isLoading,
+        error: state.description.error
+    }
+}
+
+const mapDispatchToProps = {
+    fetchDescription
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Description)

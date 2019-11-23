@@ -9,21 +9,7 @@ import axios from 'axios'
 import './List.css';
 
 function List(props) {
-    const [restaurants, setRestaurants] = useState([]);
 
-    // useEffect(() => {
-    //     api()
-    //         .get(
-    //             "/cities/2/restaurants"
-    //         )
-    //         .then(res => {
-    //             console.log(res.data.restaurants);
-    //             setRestaurants(res.data.restaurants)
-    //         })
-    //         .catch(err => {
-    //             throw (err)
-    //         })
-    // }, []);
 
     useEffect(() => {
         props.fetchPlaces()
@@ -79,9 +65,9 @@ function List(props) {
 
 function mapStateToProps(state) {
     return {
-        places: state.places,
-        isLoading: state.isLoading,
-        error: state.error
+        places: state.places.places,
+        isLoading: state.places.isLoading,
+        error: state.places.error
     }
 }
 
