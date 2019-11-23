@@ -24,8 +24,8 @@ function Welcome(props) {
             <h3>Discover new places to dine in a few clicks.</h3>
             <div className="form">
                 <div>
-                    <button onClick={toggle}>Login</button>
-                    <button onClick={toggle}>Signup</button>
+                    <button onClick={toggle} className='toggle left'>Login</button>
+                    <button onClick={toggle} className='toggle right'>Signup</button>
                 </div>
 
 

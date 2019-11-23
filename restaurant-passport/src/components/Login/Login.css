@@ -10,6 +10,8 @@
       -ms-flex-align: center;
           align-items: center;
   color: black;
+  position: relative;
+  left: 120px;
 }
 
 .signupForm {

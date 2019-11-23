@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
 
+.form {
+}
+
 .signupSection {
   //   transform: translate(-50%, -50%);
   width: 800px;
@@ -8,6 +11,8 @@
   display: flex;
   align-items: center;
   color: black;
+  position: relative;
+  left: 120px;
 }
 
 .signupForm {

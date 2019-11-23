@@ -35,7 +35,7 @@ function Signin(props) {
     }
 
     return (
-        <div>
+        <div className='form'>
             {props.login === true ? <div className='signupSection'>
                 <form onSubmit={handleSubmit} className='signupForm'>
                     {error && <div className="error">{error}</div>}
