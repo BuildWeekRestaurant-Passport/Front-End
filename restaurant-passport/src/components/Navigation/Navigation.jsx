@@ -38,12 +38,12 @@ export default function NavTabs(props) {
             <NavBar>
                 <NavLogo>
                     <h1>
-                        <NavLink exact to="/user-profile" className="logo">
+                        <a href="https://restaurant-passport-lizzyearley.netlify.com/" className="logo">
                             <span>R</span>
                             estaurant
                         <span> P</span>
                             assport
-                    </NavLink>
+                    </a>
                     </h1>
                 </NavLogo>
                 <NavMenu>

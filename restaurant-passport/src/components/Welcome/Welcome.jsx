@@ -34,7 +34,7 @@ function Welcome(props) {
 
             </div>
             <div className='form'>
-                <Signup signup={signup} setSignup={setSignup} toggle={toggle} reveal={reveal} history={props.history} />
+                <Signup signup={signup} setSignup={setSignup} login={login} setLogin={setLogin} toggle={toggle} reveal={reveal} history={props.history} />
                 <Login login={login} setLogin={setLogin} toggle={toggle} reveal={reveal} history={props.history} />
             </div>
 
