@@ -49,10 +49,7 @@ function App(props) {
       <NavTabs signedIn={signedIn} />
 
 
-      {/* <Welcome /> */}
       <Route exact path='/' component={Welcome} />
-      {/* <Route path="/login" component={Login} />
-      <Route path="/signup" component={Signup} /> */}
 
       <ProtectedRoute exact path='/places' component={List} />
       <Route exact path="/places/:id" render={props => {

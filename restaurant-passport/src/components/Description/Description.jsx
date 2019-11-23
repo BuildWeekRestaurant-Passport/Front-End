@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react'
 import api from '../../utils/api'
 import styled from "styled-components"
 import WebFont from 'webfontloader';
+import { FaCheck } from 'react-icons/fa';
+
 
 function Description(props) {
     const [place, setPlace] = useState();
@@ -67,12 +69,12 @@ function Description(props) {
        -webkit-box-shadow: 20px 18px 10px #2F4F4F;
        -khtml-box-shadow: 20px 18px 10px #2F4F4F;`
 
-       
+
     const Header = styled.h2`
      font-size: 3rem;
      text-shadow: 3px 3px BlueViolet;`
 
-     
+
     if (!place) {
         return <div>Loading restaurant information...</div>
     }
@@ -89,7 +91,7 @@ function Description(props) {
                 <div
                     onClick={toggleMode}
                     className={stamp ? 'toggle toggled' : 'toggle'}
-                />
+                ><FaCheck /></div>
             </div>
 
         </Card>

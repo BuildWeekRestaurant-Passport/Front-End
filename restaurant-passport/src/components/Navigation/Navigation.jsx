@@ -70,7 +70,6 @@ export default function NavTabs(props) {
                     <Route exact path="/user-profile" />  {/* TODO: Add components to routes. */}
                     <Route exact path="/places" />
                     <Route path="/stamped" />
-
                 </NavMenu>
             </NavBar>
         </NavContent>
