@@ -11,6 +11,7 @@ import NavTabs from "./components/Navigation/Navigation"
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import Welcome from './components/Welcome/Welcome'
 import Header from "./components/List/Header"
+import UserProfile from "./components/Profile/Profile";
 
 
 
@@ -25,11 +26,11 @@ function App(props) {
   ])
   console.log(savedPlace)
   // const [place, setPlace] = useState({
-  //   name: `Knife`,
-  //   address: '5300 E Mockingbird Ln',
+  //   name: `Zoli's NY Pizza`,
+  //   address: '14910 Midway Rd',
   //   city: 'Dallas',
   //   city_id: 2,
-  //   description: 'bbq'
+  //   description: 'pizza'
   // })
 
   // useEffect(() => {
@@ -46,20 +47,21 @@ function App(props) {
   return (
     <div className="App">
 
-      <NavTabs signedIn={signedIn} />
+    <NavTabs signedIn={signedIn} />
 
 
-      {/* <Welcome /> */}
-      <Route exact path='/' component={Welcome} />
-      {/* <Route path="/login" component={Login} />
-      <Route path="/signup" component={Signup} /> */}
+    {/* <Welcome /> */}
+    <Route exact path='/' component={Welcome} />
+    {/* <Route path="/login" component={Login} />
+    <Route path="/signup" component={Signup} /> */}
 
-      <ProtectedRoute exact path='/places' component={List} />
-      <Route exact path="/places/:id" render={props => {
-        return <Description {...props} setSavedPlace={setSavedPlace} savedPlace={savedPlace} />
-      }} />
-      <ProtectedRoute exact path="/logout" component={Logout} />
-    </div>
+    <ProtectedRoute exact path='/places' component={List} />
+    <Route exact path="/user-profile" component={UserProfile}/> 
+    <Route exact path="/places/:id" render={props => {
+      return <Description {...props} setSavedPlace={setSavedPlace} savedPlace={savedPlace} />
+    }} />
+    <ProtectedRoute exact path="/logout" component={Logout} />
+  </div>
   );
 }
 
