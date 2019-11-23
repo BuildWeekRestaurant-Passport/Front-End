@@ -22,10 +22,16 @@ function Signup(props) {
         api()
             .post('users/register', data)
             .then(result => {
-                props.history.push('/')
+                setData({
+                    email: '',
+                    password: '',
+                    username: ''
+                })
+                props.setSignup(!props.signup)
+                props.setLogin(!props.login)
             })
             .catch(err => {
-                setError(err.response.data.message)
+                throw (err)
             })
     }
 
