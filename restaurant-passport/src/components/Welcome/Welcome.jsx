@@ -21,21 +21,22 @@ function Welcome(props) {
 
     return (
         <section className='welcome'>
-            <h1>Restaurant Passport</h1>
             <h3>Discover new places to dine in a few clicks.</h3>
             <div className="form">
                 <div>
                     <button onClick={toggle}>Login</button>
-                    <Login login={login} setLogin={setLogin} toggle={toggle} reveal={reveal} history={props.history} />
+                    <button onClick={toggle}>Signup</button>
                 </div>
 
-                <div>
-                    <button onClick={toggle}>Signup</button>
-                    <Signup signup={signup} setSignup={setSignup} toggle={toggle} reveal={reveal} history={props.history} />
-                </div>
+
+
+
 
             </div>
-
+            <div className='form'>
+                <Signup signup={signup} setSignup={setSignup} toggle={toggle} reveal={reveal} history={props.history} />
+                <Login login={login} setLogin={setLogin} toggle={toggle} reveal={reveal} history={props.history} />
+            </div>
 
         </section>
     )

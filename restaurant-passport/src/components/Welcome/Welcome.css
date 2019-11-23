@@ -13,8 +13,12 @@
           align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.welcome .form {
+  text-align: center;
 }
 
 .welcome h1 {
@@ -22,12 +26,12 @@
   font-size: 4rem;
   color: white;
   font-family: "Libre Baskerville", serif;
-  margin-top: 250px;
 }
 
 .welcome h3 {
   color: white;
   font-size: 2.5rem;
   font-family: "Libre Baskerville", serif;
+  margin-top: 250px;
 }
 /*# sourceMappingURL=Welcome.css.map */

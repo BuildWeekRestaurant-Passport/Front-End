@@ -11,24 +11,23 @@
   background-position: center;
   display: flex;
   align-items: center;
-  flex-flow: column wrap;
+  flex-flow: column;
+
+  .form {
+    text-align: center;
+  }
 
   h1 {
     color: white;
     font-size: 4rem;
     color: white;
     font-family: "Libre Baskerville", serif;
-    margin-top: 250px;
   }
 
   h3 {
     color: white;
     font-size: 2.5rem;
     font-family: "Libre Baskerville", serif;
+    margin-top: 250px;
   }
-}
-
-.form {
-  display: flex;
-  flex-direction: row;
 }
