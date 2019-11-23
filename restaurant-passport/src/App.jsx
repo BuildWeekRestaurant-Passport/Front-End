@@ -11,6 +11,7 @@ import NavTabs from "./components/Navigation/Navigation"
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import Welcome from './components/Welcome/Welcome'
 import Header from "./components/List/Header"
+import UserProfile from "./components/Profile/Profile";
 
 
 
@@ -45,24 +46,22 @@ function App(props) {
 
   return (
     <div className="App">
-      <nav>
-        {signedIn && <NavTabs />}
-        {!signedIn && <Link to="/signup">Sign Up</Link>}
-        {!signedIn && <Link to="/login">Login</Link>}
-        {/* {signedIn && <Link to="/logout">Logout</Link>} */}
-      </nav>
 
-      {/* <Welcome /> */}
-      {/* <Route exact path='/' component={Welcome} /> */}
-      <Route path="/login" component={Login} />
-      <Route path="/signup" component={Signup} />
+    <NavTabs signedIn={signedIn} />
 
-      <ProtectedRoute exact path='/places' component={List} />
-      <Route exact path="/places/:id" render={props => {
-        return <Description {...props} setSavedPlace={setSavedPlace} savedPlace={savedPlace} />
-      }} />
-      <ProtectedRoute exact path="/logout" component={Logout} />
-    </div>
+
+    {/* <Welcome /> */}
+    <Route exact path='/' component={Welcome} />
+    {/* <Route path="/login" component={Login} />
+    <Route path="/signup" component={Signup} /> */}
+
+    <ProtectedRoute exact path='/places' component={List} />
+    <Route exact path="/user-profile" component={UserProfile}/> 
+    <Route exact path="/places/:id" render={props => {
+      return <Description {...props} setSavedPlace={setSavedPlace} savedPlace={savedPlace} />
+    }} />
+    <ProtectedRoute exact path="/logout" component={Logout} />
+  </div>
   );
 }
 
